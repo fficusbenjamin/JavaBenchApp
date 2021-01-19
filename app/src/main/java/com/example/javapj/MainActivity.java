@@ -18,14 +18,14 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    /*public void allTests(View view){
+    public void allTests(View view){
         new MatMul();
         System.out.println("CLICKED");
         TextView overall = (TextView) findViewById(R.id.showTestResult);
         //showTestResult.setText(Tests.overallTime);
-        overall.setText(results);
+        //overall.setText(results);
 
 
-    }*/
+    }
 
 }
