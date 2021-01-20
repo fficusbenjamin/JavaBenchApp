@@ -8,20 +8,34 @@
     tools:context=".MainActivity">
 
     <Button
-        android:id="@+id/allTests"
+        android:id="@+id/selectTest"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="149dp"
         android:layout_marginTop="341dp"
-        android:layout_marginEnd="150dp"
+        android:layout_marginEnd="36dp"
         android:layout_marginBottom="342dp"
         android:backgroundTint="#009688"
         android:onClick="allTests"
-        android:text="All Tests"
+        android:text="Run Selected"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/allTests"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="341dp"
+        android:layout_marginBottom="342dp"
+        android:backgroundTint="#009688"
+        android:onClick="allTests"
+        android:text="Run All Tests"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/showTestResult"
@@ -33,18 +47,39 @@
         android:layout_marginBottom="147dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
 
     <TextView
         android:id="@+id/title"
-        android:layout_width="191dp"
-        android:layout_height="37dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-black"
         android:text="Java Tests"
-        android:fontFamily="Helvetica"
-
+        android:textSize="36sp"
+        android:textStyle="bold"
+        android:typeface="monospace"
         app:layout_constraintBottom_toTopOf="@+id/allTests"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.077" />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="370dp"
+        android:layout_height="60dp"
+        android:layout_marginBottom="68dp"
+        android:progressTint="#009688"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/showTestResult"
+        app:layout_constraintVertical_bias="0.92" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
