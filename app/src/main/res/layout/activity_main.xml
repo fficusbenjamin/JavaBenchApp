@@ -38,7 +38,7 @@
         app:layout_constraintVertical_bias="0.0" />
 
     <TextView
-        android:id="@+id/showTestResult"
+        android:id="@+id/showDeviceInfo"
         android:layout_width="277dp"
         android:layout_height="176dp"
         android:layout_marginStart="67dp"

@@ -21,7 +21,9 @@ public class MainActivity extends AppCompatActivity {
     public void allTests(View view){
         new MatMul();
         System.out.println("CLICKED");
-        TextView overall = (TextView) findViewById(R.id.showTestResult);
+        TextView info = (TextView) findViewById(R.id.showDeviceInfo);
+        //info.setText(DeviceInfo.getFullDeviceName());
+        //info.setText(MatMul.);
         //showTestResult.setText(Tests.overallTime);
         //overall.setText(results);
 

@@ -1,5 +1,9 @@
 package com.example.javapj.Tests;
 
+import android.widget.TextView;
+
+import com.example.javapj.R;
+
 import java.io.File;
 import java.io.OutputStream;
 import java.net.Socket;
@@ -67,9 +71,9 @@ final public class MatMul {
         final double results = calc(n);
         final long time_diff = System.currentTimeMillis() - start_time;
         //notify("stop");
-
-        System.out.println(results);
+        //System.out.println(results);
         System.out.printf("time: %f s\n", time_diff / 1e3);
+
 
 
     }
