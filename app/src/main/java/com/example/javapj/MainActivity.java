@@ -27,14 +27,15 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void allTests(View view){
-        new Base64Java();
+        Base64Java base64 = new Base64Java();
         System.out.println("CLICKED");
         TextView info = (TextView) findViewById(R.id.showDeviceInfo);
         //info.setText(DeviceInfo.getFullDeviceName());
         //info.setText(MatMul.);
         //showTestResult.setText(Tests.overallTime);
         //overall.setText(results);
-        info.setText(Base64Java.results);
+        //info.setText(Base64Java.results);
+        base64.main();
 
 
     }
@@ -59,7 +60,7 @@ class Base64Java {
         }
     }
 
-    public void main(String[] args){
+    public void main(){
         for (final String[] fixture: new String[][]{
                 {"hello", "aGVsbG8="}, {"world", "d29ybGQ="}
         }) {
