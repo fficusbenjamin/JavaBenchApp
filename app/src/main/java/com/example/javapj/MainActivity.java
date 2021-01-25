@@ -51,14 +51,7 @@ class Base64Java {
     final static Base64.Encoder enc = Base64.getEncoder();
     public static int results;
 
-    private static void notify(final String msg) {
-        try (Socket socket = new java.net.Socket("localhost", 9001);
-             OutputStream out = socket.getOutputStream()) {
-            out.write(msg.getBytes("UTF-8"));
-        } catch (java.io.IOException e) {
-            // standalone usage
-        }
-    }
+
 
     public void main(){
         for (final String[] fixture: new String[][]{
@@ -100,7 +93,7 @@ class Base64Java {
         }
         final double t_decoded = (System.nanoTime() - t1) / 1e9;
 
-        notify("stop");
+
 
         out.println(
                 String.format(
