@@ -2,11 +2,11 @@ package com.example.javapj.Tests;
 
 import java.util.Arrays;
 import java.util.Base64;
-import static java.lang.System.out;
-import java.io.OutputStream;
-import java.net.Socket;
 
-class Base64Java {
+import static java.lang.System.out;
+
+
+final public class Base64Java {
 
     final static int STR_SIZE = 131072;
     final static int TRIES = 8192;
@@ -14,16 +14,10 @@ class Base64Java {
     final static Base64.Decoder dec = Base64.getDecoder();
     final static Base64.Encoder enc = Base64.getEncoder();
 
-    private static void notify(final String msg) {
-        try (Socket socket = new java.net.Socket("localhost", 9001);
-             OutputStream out = socket.getOutputStream()) {
-            out.write(msg.getBytes("UTF-8"));
-        } catch (java.io.IOException e) {
-            // standalone usage
-        }
-    }
 
-    public static void main(String[] args){
+
+
+    public void main(){
         for (final String[] fixture: new String[][]{
                 {"hello", "aGVsbG8="}, {"world", "d29ybGQ="}
         }) {
@@ -47,8 +41,6 @@ class Base64Java {
         final byte[] encoded = str2.getBytes();
         final byte[] b_arr = dec.decode(encoded);
 
-        //notify("Java\t" + ProcessHandle.current().pid());
-
         int s_encoded = 0;
         final long t = System.nanoTime();
         for (int i = 0 ; i < TRIES ; i++) {
@@ -63,7 +55,7 @@ class Base64Java {
         }
         final double t_decoded = (System.nanoTime() - t1) / 1e9;
 
-        notify("stop");
+
 
         out.println(
                 String.format(
@@ -78,5 +70,8 @@ class Base64Java {
                         new String(Arrays.copyOf(b_arr, 4)),
                         s_decoded, t_decoded));
         out.println("overall time: " + (t_encoded + t_decoded) + "s");
+
+
+        out.println(String.format("overall time: " + (t_encoded + t_decoded) + "s"));
     }
 }

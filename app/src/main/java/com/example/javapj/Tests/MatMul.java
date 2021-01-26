@@ -1,13 +1,6 @@
 package com.example.javapj.Tests;
 
-import android.widget.TextView;
 
-import com.example.javapj.R;
-
-import java.io.File;
-import java.io.OutputStream;
-import java.net.Socket;
-import java.util.*;
 
 final public class MatMul {
 
@@ -39,15 +32,6 @@ final public class MatMul {
         return x;
     }
 
-    private static void notify(final String msg) {
-        try (final Socket socket = new java.net.Socket("localhost", 9001);
-             final OutputStream out = socket.getOutputStream()) {
-            out.write(msg.getBytes("UTF-8"));
-        } catch (final java.io.IOException e) {
-            // standalone usage
-        }
-    }
-
     private static double calc(final int n) {
         final int size = n / 2 * 2;
         final double[][] a = matgen(size, 1.0);
@@ -66,11 +50,11 @@ final public class MatMul {
             System.exit(1);
         }
 
-        //notify("Java\t" + ProcessHandle.current().pid());
+
         final long start_time = System.currentTimeMillis();
         final double results = calc(n);
         final long time_diff = System.currentTimeMillis() - start_time;
-        //notify("stop");
+
         //System.out.println(results);
         System.out.printf("time: %f s\n", time_diff / 1e3);
 
