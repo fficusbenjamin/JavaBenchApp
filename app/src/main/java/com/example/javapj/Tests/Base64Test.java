@@ -6,7 +6,7 @@ import java.util.Base64;
 import static java.lang.System.out;
 
 
-final public class Base64Java {
+final public class Base64Test {
 
     final static int STR_SIZE = 131072;
     final static int TRIES = 8192;

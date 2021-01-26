@@ -2,9 +2,9 @@ package com.example.javapj.Tests;
 
 
 
-final public class MatMul {
+final public class MatMulTest {
 
-    private static double[][] matgen(final int n, final double seed) {
+    private static double[][] matGen(final int n, final double seed) {
         final double[][] a = new double[n][n];
         final double tmp = seed / n / n;
         for (int i = 0; i < n; ++i)
@@ -13,7 +13,7 @@ final public class MatMul {
         return a;
     }
 
-    private static double[][] matmul(final double[][] a, final double[][] b) {
+    private static double[][] matMul(final double[][] a, final double[][] b) {
         final int m = a.length;
         final int n = a[0].length;
         final int p = b[0].length;
@@ -34,13 +34,13 @@ final public class MatMul {
 
     private static double calc(final int n) {
         final int size = n / 2 * 2;
-        final double[][] a = matgen(size, 1.0);
-        final double[][] b = matgen(size, 2.0);
-        final double[][] x = matmul(a, b);
+        final double[][] a = matGen(size, 1.0);
+        final double[][] b = matGen(size, 2.0);
+        final double[][] x = matMul(a, b);
         return x[size / 2][size / 2];
     }
 
-    public static void main(String[] args) {
+    public void main(String[] args) {
         final int n = args.length > 0 ? Integer.parseInt(args[0]) : 100;
 
         double left = calc(101);
@@ -55,7 +55,7 @@ final public class MatMul {
         final double results = calc(n);
         final long time_diff = System.currentTimeMillis() - start_time;
 
-        //System.out.println(results);
+        System.out.println(results);
         System.out.printf("time: %f s\n", time_diff / 1e3);
 
 

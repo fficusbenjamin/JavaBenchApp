@@ -22,8 +22,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void allTests(View view){
-        //Base64Java base64 = new Base64Java();
-        Base64Java gigi = new Base64Java();
+        Base64Test base64 = new Base64Test();
+        MatMulTest matMulTest = new MatMulTest();
+
         System.out.println("CLICKED");
         TextView info = (TextView) findViewById(R.id.showDeviceInfo);
         //info.setText(DeviceInfo.getFullDeviceName());
@@ -31,7 +32,10 @@ public class MainActivity extends AppCompatActivity {
         //showTestResult.setText(Tests.overallTime);
         //overall.setText(results);
         //info.setText(Base64Java.results);
-        gigi.main();
+        //base64.main();
+        matMulTest.main(null);
+
+
 
 
     }
