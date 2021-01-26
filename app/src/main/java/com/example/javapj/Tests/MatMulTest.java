@@ -40,7 +40,8 @@ final public class MatMulTest {
         return x[size / 2][size / 2];
     }
 
-    public void main(String[] args) {
+    public static void main() {
+        String[] args = new String[0];
         final int n = args.length > 0 ? Integer.parseInt(args[0]) : 100;
 
         double left = calc(101);

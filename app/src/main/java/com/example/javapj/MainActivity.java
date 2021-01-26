@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void allTests(View view){
         Base64Test base64 = new Base64Test();
-        MatMulTest matMulTest = new MatMulTest();
+
 
         System.out.println("CLICKED");
         TextView info = (TextView) findViewById(R.id.showDeviceInfo);
@@ -33,7 +33,8 @@ public class MainActivity extends AppCompatActivity {
         //overall.setText(results);
         //info.setText(Base64Java.results);
         //base64.main();
-        matMulTest.main(null);
+        MatMulTest.main();
+
 
 
 
