@@ -21,8 +21,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void allTests(View view) throws IOException {
-        Base64Test base64 = new Base64Test();
+        //Base64Test base64 = new Base64Test();
         //MatMulTest.main();
+        BrainTest.main();
 
         System.out.println("CLICKED");
         TextView info = (TextView) findViewById(R.id.showDeviceInfo);
@@ -32,10 +33,6 @@ public class MainActivity extends AppCompatActivity {
         //overall.setText(results);
         //info.setText(Base64Java.results);
         //base64.main();
-        BrainTest.main();
-
-
-
 
 
     }
