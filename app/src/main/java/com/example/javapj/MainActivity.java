@@ -23,9 +23,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void allTests(View view) throws IOException {
-        Switch base64Sw = (Switch) findViewById(R.id.base64Switch);
-        Switch brainfSw = (Switch) findViewById(R.id.brainSwitch);
-        Switch matSw = (Switch) findViewById(R.id.matmulSwitch);
+        Switch base64Sw = findViewById(R.id.base64Switch);
+        Switch brainfSw = findViewById(R.id.brainSwitch);
+        Switch matSw = findViewById(R.id.matmulSwitch);
 
         if (base64Sw.isChecked()){
             System.out.println("BASE64");
@@ -43,12 +43,12 @@ public class MainActivity extends AppCompatActivity {
             MatMulTest.main();
         }
 
-        TextView info = (TextView) findViewById(R.id.showDeviceInfo);
-        info.setText(DeviceInfo.getFullDeviceName());
-        //info.setText(MatMul.);
-        //showTestResult.setText(Tests.overallTime);
-        //overall.setText(results);
-        //info.setText(Base64Java.results);
+        /*TextView info = findViewById(R.id.showInfo);
+        info.setText(DeviceInfo.getFullDeviceName());*/
+
+        TextView info = findViewById(R.id.showInfo);
+        //info.setText(Base64Test);
+
 
 
 

@@ -57,7 +57,7 @@ final public class MatMulTest {
         final long time_diff = System.currentTimeMillis() - start_time;
 
         System.out.println(results);
-        System.out.printf("time: %f s\n", time_diff / 1e3);
+        System.out.printf("Time for the MatMul test: %f s\n", time_diff / 1e3);
 
 
 

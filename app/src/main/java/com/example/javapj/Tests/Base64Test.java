@@ -6,7 +6,7 @@ import java.util.Base64;
 import static java.lang.System.out;
 
 
-final public class Base64Test {
+ public class Base64Test {
 
     final static int STR_SIZE = 131072;
     final static int TRIES = 8192;
@@ -17,7 +17,7 @@ final public class Base64Test {
 
 
 
-    public void main(){
+    public static void main(){
         for (final String[] fixture: new String[][]{
                 {"hello", "aGVsbG8="}, {"world", "d29ybGQ="}
         }) {
@@ -56,22 +56,14 @@ final public class Base64Test {
         final double t_decoded = (System.nanoTime() - t1) / 1e9;
 
 
+        String gigi = (String.format("encode %s... to %s...: %d, %.2f", new String(Arrays.copyOf(str, 4)), str2.substring(0, 4), s_encoded, t_encoded));
+        out.println(String.format("encode %s... to %s...: %d, %.2f", new String(Arrays.copyOf(str, 4)), str2.substring(0, 4), s_encoded, t_encoded));
 
-        out.println(
-                String.format(
-                        "encode %s... to %s...: %d, %.2f",
-                        new String(Arrays.copyOf(str, 4)),
-                        str2.substring(0, 4),
-                        s_encoded, t_encoded));
+        out.println(String.format("decode %s... to %s...: %d, %.2f", str2.substring(0, 4), new String(Arrays.copyOf(b_arr, 4)),s_decoded, t_decoded));
 
-        out.println(
-                String.format("decode %s... to %s...: %d, %.2f",
-                        str2.substring(0, 4),
-                        new String(Arrays.copyOf(b_arr, 4)),
-                        s_decoded, t_decoded));
         out.println("overall time: " + (t_encoded + t_decoded) + "s");
 
-
-        out.println(String.format("overall time: " + (t_encoded + t_decoded) + "s"));
+        out.println(String.format("overall time for the encoding and deconding of Base64 test: " + (t_encoded + t_decoded) + "s"));
     }
+
 }
