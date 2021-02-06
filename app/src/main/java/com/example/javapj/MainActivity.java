@@ -26,16 +26,20 @@ public class MainActivity extends AppCompatActivity {
         Switch base64Sw = findViewById(R.id.base64Switch);
         Switch brainfSw = findViewById(R.id.brainSwitch);
         Switch matSw = findViewById(R.id.matmulSwitch);
+        TextView info = findViewById(R.id.showInfo);
 
         if (base64Sw.isChecked()){
             System.out.println("BASE64");
             Base64Test base64 = new Base64Test();
             base64.main();
+            info.setText(Base64Test.results());
         }
 
         if(brainfSw.isChecked()){
             System.out.println("BRAINTEST");
             BrainTest.main();
+            info.setText(BrainTest.results());
+
         }
 
         if(matSw.isChecked()){
@@ -46,8 +50,8 @@ public class MainActivity extends AppCompatActivity {
         /*TextView info = findViewById(R.id.showInfo);
         info.setText(DeviceInfo.getFullDeviceName());*/
 
-        TextView info = findViewById(R.id.showInfo);
-        //info.setText(Base64Test);
+
+
 
 
 
