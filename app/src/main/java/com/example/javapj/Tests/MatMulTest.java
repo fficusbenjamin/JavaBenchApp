@@ -4,6 +4,8 @@ package com.example.javapj.Tests;
 
 final public class MatMulTest {
 
+    public static long time_diff;
+
     private static double[][] matGen(final int n, final double seed) {
         final double[][] a = new double[n][n];
         final double tmp = seed / n / n;
@@ -54,13 +56,16 @@ final public class MatMulTest {
 
         final long start_time = System.currentTimeMillis();
         final double results = calc(n);
-        final long time_diff = System.currentTimeMillis() - start_time;
+        time_diff = System.currentTimeMillis() - start_time;
 
         System.out.println(results);
         System.out.printf("Time for the MatMul test: %f s\n", time_diff / 1e3);
+    }
 
+    public static String results(){
+
+        return (String.format("Time for the MatMul test: %f s\n", time_diff / 1e3));
 
 
     }
-
 }

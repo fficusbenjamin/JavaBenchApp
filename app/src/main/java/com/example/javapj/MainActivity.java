@@ -45,6 +45,7 @@ public class MainActivity extends AppCompatActivity {
         if(matSw.isChecked()){
             System.out.println("MATMUL");
             MatMulTest.main();
+            info.setText(MatMulTest.results());
         }
 
         /*TextView info = findViewById(R.id.showInfo);
