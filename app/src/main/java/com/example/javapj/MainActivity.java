@@ -17,12 +17,17 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        TextView info = findViewById(R.id.showInfo);
+        info.setText(DeviceInfo.getFullDeviceName());
+    }
 
+    public void allTests(View view) throws IOException{
+        BcryptHashing.main();
 
 
     }
 
-    public void allTests(View view) throws IOException {
+    public void selTests(View view) throws IOException {
         Switch base64Sw = findViewById(R.id.base64Switch);
         Switch brainfSw = findViewById(R.id.brainSwitch);
         Switch matSw = findViewById(R.id.matmulSwitch);
@@ -39,7 +44,6 @@ public class MainActivity extends AppCompatActivity {
             System.out.println("BRAINTEST");
             BrainTest.main();
             info.setText(BrainTest.results());
-
         }
 
         if(matSw.isChecked()){
@@ -47,17 +51,6 @@ public class MainActivity extends AppCompatActivity {
             MatMulTest.main();
             info.setText(MatMulTest.results());
         }
-
-        /*TextView info = findViewById(R.id.showInfo);
-        info.setText(DeviceInfo.getFullDeviceName());*/
-
-
-
-
-
-
-
     }
-
 }
 

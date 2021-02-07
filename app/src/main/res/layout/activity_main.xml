@@ -15,7 +15,7 @@
         android:layout_marginEnd="36dp"
         android:layout_marginBottom="342dp"
         android:backgroundTint="#009688"
-        android:onClick="allTests"
+        android:onClick="selTests"
         android:text="Run Selected"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

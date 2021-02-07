@@ -19,9 +19,6 @@ import static java.lang.System.out;
     static double t_encoded;
     static double t_decoded;
 
-
-
-
      public static void main(){
         for (final String[] fixture: new String[][]{
                 {"hello", "aGVsbG8="}, {"world", "d29ybGQ="}
