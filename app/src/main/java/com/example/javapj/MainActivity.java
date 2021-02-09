@@ -1,12 +1,16 @@
 package com.example.javapj;
 
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.view.View;
 import android.widget.Switch;
 import android.widget.TextView;
+import android.widget.VideoView;
 
 import com.example.javapj.Tests.*;
 
@@ -23,13 +27,10 @@ public class MainActivity extends AppCompatActivity {
         info.setText(DeviceInfo.getFullDeviceName());
     }
 
-    public void allTests(View view) throws IOException{
-        //BcryptHashing.main();
-        Intent cameraTest = new Intent(MainActivity.this, CameraActivity.class);
-        startActivity(cameraTest);
-        //setContentView(R.layout.activity_camera);
-
-
+    public void cameraTest(View view) throws IOException{
+        Intent intent = new Intent(MediaStore.ACTION_VIDEO_CAPTURE);
+        intent.putExtra(MediaStore.EXTRA_DURATION_LIMIT, 5);
+        startActivityForResult(intent, 1);
     }
 
     public void selTests(View view) throws IOException {
@@ -57,5 +58,21 @@ public class MainActivity extends AppCompatActivity {
             info.setText(MatMulTest.results());
         }
     }
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+
+        super.onActivityResult(requestCode, resultCode, data);
+        if (resultCode == RESULT_OK && requestCode == 1) {
+            AlertDialog.Builder builder = new AlertDialog.Builder(this);
+            VideoView videoView = new VideoView(this);
+            videoView.setVideoURI(data.getData());
+            videoView.start();
+            builder.setView(videoView).show();
+
+        }
+
+    }
+
+
 }
 
