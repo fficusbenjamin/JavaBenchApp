@@ -1,6 +1,8 @@
 package com.example.javapj;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Switch;
@@ -22,7 +24,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void allTests(View view) throws IOException{
-        BcryptHashing.main();
+        //BcryptHashing.main();
+        Intent cameraTest = new Intent(MainActivity.this, CameraActivity.class);
+        startActivity(cameraTest);
+        //setContentView(R.layout.activity_camera);
 
 
     }
