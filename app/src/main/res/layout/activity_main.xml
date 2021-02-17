@@ -124,4 +124,17 @@
         android:layout_height="wrap_content"
         app:constraint_referenced_ids="matmulSwitch,brainSwitch,base64Switch" />
 
+    <Switch
+        android:id="@+id/fastaSwitch"
+        android:layout_width="130dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="72dp"
+        android:text="Fasta"
+        app:layout_constraintBottom_toTopOf="@+id/selectTest"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.425"
+        app:layout_constraintStart_toEndOf="@+id/base64Switch"
+        app:layout_constraintTop_toBottomOf="@+id/title"
+        app:layout_constraintVertical_bias="0.19" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

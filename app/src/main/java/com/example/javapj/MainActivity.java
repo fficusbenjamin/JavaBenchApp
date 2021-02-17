@@ -3,7 +3,6 @@ package com.example.javapj;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.provider.MediaStore;
@@ -11,11 +10,7 @@ import android.view.View;
 import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.VideoView;
-
 import com.example.javapj.Tests.*;
-
-import org.w3c.dom.Text;
-
 import java.io.IOException;
 
 
@@ -43,6 +38,7 @@ public class MainActivity extends AppCompatActivity {
         Switch base64Sw = findViewById(R.id.base64Switch);
         Switch brainfSw = findViewById(R.id.brainSwitch);
         Switch matSw = findViewById(R.id.matmulSwitch);
+        Switch faSwitch = findViewById(R.id.fastaSwitch);
         TextView info = findViewById(R.id.showInfo);
 
         if (base64Sw.isChecked()){
@@ -63,6 +59,14 @@ public class MainActivity extends AppCompatActivity {
             MatMulTest.main();
             info.setText(MatMulTest.results());
         }
+
+        if(faSwitch.isChecked()){
+            System.out.println("FASTA");
+            FastaTest fastaTest = new FastaTest();
+            fastaTest.runBenchmark();
+            info.setText(fastaTest.results());
+        }
+
     }
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
@@ -79,7 +83,5 @@ public class MainActivity extends AppCompatActivity {
             info.setText(String.format("Time for the Camera test: %f s\n", time_diff / 1e3));
         }
     }
-
-
 }
 
