@@ -14,10 +14,15 @@ import android.widget.VideoView;
 
 import com.example.javapj.Tests.*;
 
+import org.w3c.dom.Text;
+
 import java.io.IOException;
 
 
 public class MainActivity extends AppCompatActivity {
+
+    final long camera_time = System.currentTimeMillis();
+    public static long time_diff;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +36,7 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(MediaStore.ACTION_VIDEO_CAPTURE);
         intent.putExtra(MediaStore.EXTRA_DURATION_LIMIT, 5);
         startActivityForResult(intent, 1);
+
     }
 
     public void selTests(View view) throws IOException {
@@ -68,9 +74,10 @@ public class MainActivity extends AppCompatActivity {
             videoView.setVideoURI(data.getData());
             videoView.start();
             builder.setView(videoView).show();
-
+            TextView info = findViewById(R.id.showInfo);
+            time_diff = System.currentTimeMillis() - camera_time;
+            info.setText(String.format("Time for the Camera test: %f s\n", time_diff / 1e3));
         }
-
     }
 
 
