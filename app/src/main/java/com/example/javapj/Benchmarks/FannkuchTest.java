@@ -1,6 +1,6 @@
-package com.example.javapj.Tests;
+package com.example.javapj.Benchmarks;
 
-public class FannkuchRedux {
+public class FannkuchTest {
 
     public int fannkuch(int n) {
         int[] perm = new int[n];

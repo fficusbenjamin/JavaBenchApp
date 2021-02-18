@@ -1,6 +1,6 @@
-package com.example.javapj.Tests;
+package com.example.javapj.Benchmarks;
 
-public final class nbody {
+public final class NBodyTest {
     public void runBenchmark(){
         int n = 50;
         NBodySystem bodies = new NBodySystem();

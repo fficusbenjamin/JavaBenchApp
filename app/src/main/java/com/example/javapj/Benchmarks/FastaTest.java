@@ -1,4 +1,4 @@
-package com.example.javapj.Tests;
+package com.example.javapj.Benchmarks;
 
 import java.io.IOException;
 import java.io.OutputStream;

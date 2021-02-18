@@ -10,7 +10,7 @@ import android.view.View;
 import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.VideoView;
-import com.example.javapj.Tests.*;
+import com.example.javapj.Benchmarks.*;
 import java.io.IOException;
 
 
@@ -73,14 +73,14 @@ public class MainActivity extends AppCompatActivity {
         }
         if(fannSwitch.isChecked()){
             System.out.println("FANNKUCK");
-            FannkuchRedux fannkuchRedux = new FannkuchRedux();
-            fannkuchRedux.runBenchmark();
+            FannkuchTest fannkuchTest = new FannkuchTest();
+            fannkuchTest.runBenchmark();
 
         }
 
         if(nbodySwitch.isChecked()){
             System.out.println("NBODY");
-            nbody nbody = new nbody();
+            NBodyTest nbody = new NBodyTest();
             nbody.runBenchmark();
         }
 
