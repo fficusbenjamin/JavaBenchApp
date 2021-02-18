@@ -2,6 +2,9 @@ package com.example.javapj.Benchmarks;
 
 public class FannkuchTest {
 
+    public static long time_diff;
+
+
     public int fannkuch(int n) {
         int[] perm = new int[n];
         int[] perm1 = new int[n];
@@ -57,8 +60,15 @@ public class FannkuchTest {
         }
     }
     public void runBenchmark(){
+        final long start_time = System.currentTimeMillis();
+
         int n = 7;
         //if (args.length > 0) n = Integer.parseInt(args[0]);
         System.out.println("Pfannkuchen("+n+") = "+fannkuch(n));
+        time_diff = System.currentTimeMillis() - start_time;
+    }
+
+    public static String results(){
+        return (String.format("Time for the Fannkuch test: %f s\n", time_diff / 1e3));
     }
 }

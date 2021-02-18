@@ -1,13 +1,22 @@
 package com.example.javapj.Benchmarks;
 
 public final class NBodyTest {
+
+    public static long time_diff;
+
     public void runBenchmark(){
+        final long start_time = System.currentTimeMillis();
         int n = 50;
         NBodySystem bodies = new NBodySystem();
         System.out.printf("%.9f\n", bodies.energy());
         for (int i=0; i<n; ++i)
             bodies.advance(0.01);
         System.out.printf("%.9f\n", bodies.energy());
+        time_diff = System.currentTimeMillis() - start_time;
+    }
+
+    public static String results(){
+        return (String.format("Time for the NBody test: %f s\n", time_diff / 1e3));
     }
 }
 

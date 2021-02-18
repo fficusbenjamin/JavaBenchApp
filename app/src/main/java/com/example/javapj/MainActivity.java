@@ -75,13 +75,14 @@ public class MainActivity extends AppCompatActivity {
             System.out.println("FANNKUCK");
             FannkuchTest fannkuchTest = new FannkuchTest();
             fannkuchTest.runBenchmark();
-
+            info.setText(fannkuchTest.results());
         }
 
         if(nbodySwitch.isChecked()){
             System.out.println("NBODY");
             NBodyTest nbody = new NBodyTest();
             nbody.runBenchmark();
+            info.setText(nbody.results());
         }
 
     }
