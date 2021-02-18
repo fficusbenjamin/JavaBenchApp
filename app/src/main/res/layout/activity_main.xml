@@ -9,10 +9,10 @@
 
     <Button
         android:id="@+id/selectTest"
-        android:layout_width="wrap_content"
+        android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="341dp"
-        android:layout_marginEnd="36dp"
+        android:layout_marginEnd="240dp"
         android:layout_marginBottom="342dp"
         android:backgroundTint="#009688"
         android:onClick="selTests"
@@ -24,9 +24,9 @@
 
     <Button
         android:id="@+id/allTests"
-        android:layout_width="wrap_content"
+        android:layout_width="150dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="36dp"
+        android:layout_marginStart="244dp"
         android:layout_marginTop="341dp"
         android:layout_marginBottom="342dp"
         android:backgroundTint="#009688"
@@ -35,27 +35,25 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="1.0" />
 
     <TextView
         android:id="@+id/showInfo"
-        android:layout_width="329dp"
-        android:layout_height="99dp"
+        android:layout_width="361dp"
+        android:layout_height="253dp"
         android:layout_marginStart="67dp"
         android:layout_marginEnd="67dp"
         android:layout_marginBottom="50dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/progressBar"
-        app:layout_constraintVertical_bias="0.666" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="sans-serif-black"
-        android:text="Java Tests"
+        android:text="Java Benchmarks"
         android:textSize="36sp"
         android:textStyle="bold"
         android:typeface="monospace"
@@ -65,21 +63,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.077" />
-
-    <ProgressBar
-        android:id="@+id/progressBar"
-        style="?android:attr/progressBarStyleHorizontal"
-        android:layout_width="370dp"
-        android:layout_height="60dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="538dp"
-        android:layout_marginEnd="20dp"
-        android:layout_marginBottom="248dp"
-        android:progressTint="#009688"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
     <Switch
         android:id="@+id/base64Switch"
@@ -136,5 +119,29 @@
         app:layout_constraintStart_toEndOf="@+id/base64Switch"
         app:layout_constraintTop_toBottomOf="@+id/title"
         app:layout_constraintVertical_bias="0.19" />
+
+    <Switch
+        android:id="@+id/fannSwitch"
+        android:layout_width="130dp"
+        android:layout_height="30dp"
+        android:text="Fannkuch"
+        app:layout_constraintBottom_toTopOf="@+id/selectTest"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.773"
+        app:layout_constraintStart_toEndOf="@+id/brainSwitch"
+        app:layout_constraintTop_toBottomOf="@+id/fastaSwitch"
+        app:layout_constraintVertical_bias="0.268" />
+
+    <Switch
+        android:id="@+id/nbodySwitch"
+        android:layout_width="130dp"
+        android:layout_height="30dp"
+        android:text="NBody"
+        app:layout_constraintBottom_toTopOf="@+id/selectTest"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.773"
+        app:layout_constraintStart_toEndOf="@+id/matmulSwitch"
+        app:layout_constraintTop_toBottomOf="@+id/fannSwitch"
+        app:layout_constraintVertical_bias="0.505" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

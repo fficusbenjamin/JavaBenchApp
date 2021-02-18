@@ -34,12 +34,17 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    public void selTests(View view) throws IOException {
+
+
+    public void selTests(View view) throws Exception {
         Switch base64Sw = findViewById(R.id.base64Switch);
         Switch brainfSw = findViewById(R.id.brainSwitch);
         Switch matSw = findViewById(R.id.matmulSwitch);
         Switch faSwitch = findViewById(R.id.fastaSwitch);
+        Switch fannSwitch = findViewById(R.id.fannSwitch);
+        Switch nbodySwitch = findViewById(R.id.nbodySwitch);
         TextView info = findViewById(R.id.showInfo);
+
 
         if (base64Sw.isChecked()){
             System.out.println("BASE64");
@@ -65,6 +70,18 @@ public class MainActivity extends AppCompatActivity {
             FastaTest fastaTest = new FastaTest();
             fastaTest.runBenchmark();
             info.setText(fastaTest.results());
+        }
+        if(fannSwitch.isChecked()){
+            System.out.println("FANNKUCK");
+            FannkuchRedux fannkuchRedux = new FannkuchRedux();
+            fannkuchRedux.runBenchmark();
+
+        }
+
+        if(nbodySwitch.isChecked()){
+            System.out.println("NBODY");
+            nbody nbody = new nbody();
+            nbody.runBenchmark();
         }
 
     }
