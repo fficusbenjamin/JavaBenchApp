@@ -12,13 +12,14 @@
         android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="341dp"
-        android:layout_marginEnd="240dp"
         android:layout_marginBottom="342dp"
         android:backgroundTint="#009688"
         android:onClick="selTests"
         android:text="Run Selected"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.122"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0" />
 
@@ -26,16 +27,17 @@
         android:id="@+id/allTests"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="244dp"
         android:layout_marginTop="341dp"
         android:layout_marginBottom="342dp"
         android:backgroundTint="#009688"
         android:onClick="cameraTest"
         android:text="Run Camera Test"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.908"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/showInfo"
@@ -113,33 +115,31 @@
         android:layout_height="30dp"
         android:layout_marginStart="72dp"
         android:text="Fasta"
-        app:layout_constraintBottom_toTopOf="@+id/selectTest"
+        app:layout_constraintBottom_toTopOf="@+id/fannSwitch"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.425"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/base64Switch"
-        app:layout_constraintTop_toBottomOf="@+id/title"
-        app:layout_constraintVertical_bias="0.19" />
+        app:layout_constraintTop_toBottomOf="@+id/title" />
 
     <Switch
         android:id="@+id/fannSwitch"
         android:layout_width="130dp"
         android:layout_height="30dp"
         android:text="Fannkuch"
-        app:layout_constraintBottom_toTopOf="@+id/selectTest"
+        app:layout_constraintBottom_toTopOf="@+id/nbodySwitch"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.773"
+        app:layout_constraintHorizontal_bias="0.806"
         app:layout_constraintStart_toEndOf="@+id/brainSwitch"
-        app:layout_constraintTop_toBottomOf="@+id/fastaSwitch"
-        app:layout_constraintVertical_bias="0.268" />
+        app:layout_constraintTop_toBottomOf="@+id/fastaSwitch" />
 
     <Switch
         android:id="@+id/nbodySwitch"
         android:layout_width="130dp"
         android:layout_height="30dp"
         android:text="NBody"
-        app:layout_constraintBottom_toTopOf="@+id/selectTest"
+        app:layout_constraintBottom_toTopOf="@+id/allTests"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.773"
+        app:layout_constraintHorizontal_bias="0.806"
         app:layout_constraintStart_toEndOf="@+id/matmulSwitch"
         app:layout_constraintTop_toBottomOf="@+id/fannSwitch"
         app:layout_constraintVertical_bias="0.505" />
