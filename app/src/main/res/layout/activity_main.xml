@@ -10,7 +10,7 @@
     <Button
         android:id="@+id/selectTest"
         android:layout_width="150dp"
-        android:layout_height="wrap_content"
+        android:layout_height="60dp"
         android:layout_marginTop="341dp"
         android:layout_marginBottom="342dp"
         android:backgroundTint="#009688"
@@ -26,7 +26,7 @@
     <Button
         android:id="@+id/allTests"
         android:layout_width="150dp"
-        android:layout_height="wrap_content"
+        android:layout_height="60dp"
         android:layout_marginTop="341dp"
         android:layout_marginBottom="342dp"
         android:backgroundTint="#009688"
@@ -59,12 +59,11 @@
         android:textSize="36sp"
         android:textStyle="bold"
         android:typeface="monospace"
-        app:layout_constraintBottom_toTopOf="@+id/allTests"
+        app:layout_constraintBottom_toTopOf="@+id/showInfo"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.077" />
+        app:layout_constraintVertical_bias="0.041" />
 
     <Switch
         android:id="@+id/base64Switch"
