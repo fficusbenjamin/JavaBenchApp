@@ -66,6 +66,7 @@ public class FannkuchTest {
         //if (args.length > 0) n = Integer.parseInt(args[0]);
         System.out.println("Pfannkuchen("+n+") = "+fannkuch(n));
         time_diff = System.currentTimeMillis() - start_time;
+        System.out.printf("Time for the Fannkuch test: %f s\n", time_diff / 1e3);
     }
 
     public static String results(){

@@ -13,6 +13,7 @@ public final class NBodyTest {
             bodies.advance(0.01);
         System.out.printf("%.9f\n", bodies.energy());
         time_diff = System.currentTimeMillis() - start_time;
+        System.out.printf("Time for the NBody test: %f s\n", time_diff / 1e3);
     }
 
     public static String results(){

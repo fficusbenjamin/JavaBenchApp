@@ -60,28 +60,54 @@ public class MainActivity extends AppCompatActivity {
 
         if(matSw.isChecked()){
             System.out.println("MATMUL");
-            MatMulTest.main();
-            info.setText(MatMulTest.results());
+            final long start_time = System.currentTimeMillis();
+            for(int i=0; i < 100; i++) {
+                MatMulTest.main();
+                System.out.println(MatMulTest.results());
+            }
+            time_diff = System.currentTimeMillis() - start_time;
+            String result = String.format("Time for the MatMul test: %f s\n", time_diff / 1e3);
+            info.setText(result);
         }
 
         if(faSwitch.isChecked()){
             System.out.println("FASTA");
             FastaTest fastaTest = new FastaTest();
-            fastaTest.runBenchmark();
-            info.setText(fastaTest.results());
+            final long start_time = System.currentTimeMillis();
+            for(int i=0; i<100; i++){
+                fastaTest.runBenchmark();
+                System.out.println(fastaTest.results());
+            }
+            time_diff = System.currentTimeMillis() - start_time;
+            String result = String.format("Time for the Fasta test: %f s\n", time_diff / 1e3);
+            info.setText(result);
         }
+
         if(fannSwitch.isChecked()){
             System.out.println("FANNKUCK");
             FannkuchTest fannkuchTest = new FannkuchTest();
-            fannkuchTest.runBenchmark();
-            info.setText(fannkuchTest.results());
+            final long start_time = System.currentTimeMillis();
+            for(int i=0; i<100; i++) {
+                fannkuchTest.runBenchmark();
+                System.out.println(fannkuchTest.results());
+            }
+            time_diff = System.currentTimeMillis() - start_time;
+            String result = String.format("Time for the Fannkuch test: %f s\n", time_diff / 1e3);
+            info.setText(result);
         }
 
         if(nbodySwitch.isChecked()){
             System.out.println("NBODY");
             NBodyTest nbody = new NBodyTest();
-            nbody.runBenchmark();
-            info.setText(nbody.results());
+            final long start_time = System.currentTimeMillis();
+            for(int i=0; i<100; i++) {
+                nbody.runBenchmark();
+                System.out.println(nbody.results());
+
+            }
+            time_diff = System.currentTimeMillis() - start_time;
+            String result = String.format("Time for the NBody test: %f s\n", time_diff / 1e3);
+            info.setText(result);
         }
 
     }
