@@ -1,2 +1,3 @@
-# JavaPj
-Final Project Java Version
+# Java Benchmarking Project
+
+Android application in Java that benchmarks the language and uses the MediaStore API.
